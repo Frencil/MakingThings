@@ -1,0 +1,238 @@
+Tool,Material,Process
+Blowtorch / Lamp,Carbon Fiber / Fiberglass / Kevlar,Bending
+Soldering / Heating Irons,Carbon Fiber / Fiberglass / Kevlar,Bending
+Molds / Forms / Casts,Carbon Fiber / Fiberglass / Kevlar,Casting
+Chemical Adhesives,Carbon Fiber / Fiberglass / Kevlar,Composition
+Epoxy / Synthetic Resins,Carbon Fiber / Fiberglass / Kevlar,Composition
+Presses / Brakes,Carbon Fiber / Fiberglass / Kevlar,Creasing / Pleating
+Laser,Carbon Fiber / Fiberglass / Kevlar,Cutting
+Saw,Carbon Fiber / Fiberglass / Kevlar,Cutting
+Scoring Edge / Tool,Carbon Fiber / Fiberglass / Kevlar,Cutting
+Shears / Snips / Scissors,Carbon Fiber / Fiberglass / Kevlar,Cutting
+Drill / Drill Press,Carbon Fiber / Fiberglass / Kevlar,Drilling
+Abrasives / Grinders,Carbon Fiber / Fiberglass / Kevlar,Etching
+Laser,Carbon Fiber / Fiberglass / Kevlar,Etching
+Chemical Adhesives,Carbon Fiber / Fiberglass / Kevlar,Laminating / Fusing
+Epoxy / Synthetic Resins,Carbon Fiber / Fiberglass / Kevlar,Laminating / Fusing
+Lathe,Carbon Fiber / Fiberglass / Kevlar,Milling
+Mill / Milling Machine,Carbon Fiber / Fiberglass / Kevlar,Milling
+Paints / Inks,Carbon Fiber / Fiberglass / Kevlar,Painting / Inking
+Needle,Carbon Fiber / Fiberglass / Kevlar,Sewing
+Sewing Machine,Carbon Fiber / Fiberglass / Kevlar,Sewing
+Stains / Dyes,Carbon Fiber / Fiberglass / Kevlar,Staining / Dyeing
+3D Printer,Clays / Polymers,3D Printing
+,Clays / Polymers,Bending
+Molds / Forms / Casts,Clays / Polymers,Casting
+Chemical Adhesives,Clays / Polymers,Composition
+Epoxy / Synthetic Resins,Clays / Polymers,Composition
+Laser,Clays / Polymers,Cutting
+Saw,Clays / Polymers,Cutting
+Scoring Edge / Tool,Clays / Polymers,Cutting
+Shears / Snips / Scissors,Clays / Polymers,Cutting
+Drill / Drill Press,Clays / Polymers,Drilling
+Abrasives / Grinders,Clays / Polymers,Etching
+Chemical Etchant / Solvent,Clays / Polymers,Etching
+Laser,Clays / Polymers,Etching
+Chemical Adhesives,Clays / Polymers,Laminating / Fusing
+Epoxy / Synthetic Resins,Clays / Polymers,Laminating / Fusing
+Lathe,Clays / Polymers,Milling
+Mill / Milling Machine,Clays / Polymers,Milling
+,Clays / Polymers,Molding / Forging
+Paints / Inks,Clays / Polymers,Painting / Inking
+Needle ,Clays / Polymers,Sewing
+Stains / Dyes,Clays / Polymers,Staining / Dyeing
+Lathe,Clays / Polymers,Turning
+,Clays / Polymers,Weaving / Braiding / Twisting
+3D Printer,Epoxy / Synthetic Resins,3D Printing
+Blowtorch / Lamp,Epoxy / Synthetic Resins,Bending
+Soldering / Heating Irons,Epoxy / Synthetic Resins,Bending
+Knives / Chisels / Gouges,Epoxy / Synthetic Resins,Carving
+Molds / Forms / Casts,Epoxy / Synthetic Resins,Casting
+Laser,Epoxy / Synthetic Resins,Cutting
+Saw,Epoxy / Synthetic Resins,Cutting
+Scoring Edge / Tool,Epoxy / Synthetic Resins,Cutting
+Drill / Drill Press,Epoxy / Synthetic Resins,Drilling
+Abrasives / Grinders,Epoxy / Synthetic Resins,Etching
+Chemical Etchant / Solvent,Epoxy / Synthetic Resins,Etching
+Laser,Epoxy / Synthetic Resins,Etching
+Soldering / Heating Irons,Epoxy / Synthetic Resins,Etching
+Chemical Adhesives,Epoxy / Synthetic Resins,Laminating / Fusing
+Epoxy / Synthetic Resins,Epoxy / Synthetic Resins,Laminating / Fusing
+Lathe,Epoxy / Synthetic Resins,Milling
+Mill / Milling Machine,Epoxy / Synthetic Resins,Milling
+Paints / Inks,Epoxy / Synthetic Resins,Painting / Inking
+Stains / Dyes,Epoxy / Synthetic Resins,Staining / Dyeing
+Lathe,Epoxy / Synthetic Resins,Turning
+Blowtorch / Lamp,Epoxy / Synthetic Resins,Welding
+Epoxy / Synthetic Resins,Fibers,Casting
+Molds / Forms / Casts,Fibers,Casting
+Chemical Adhesives,Fibers,Composition
+Epoxy / Synthetic Resins,Fibers,Composition
+Needle,Fibers,Felting
+Blowtorch / Lamp,Fibers,Laminating / Fusing
+Chemical Adhesives,Fibers,Laminating / Fusing
+Epoxy / Synthetic Resins,Fibers,Laminating / Fusing
+Soldering / Heating Irons,Fibers,Laminating / Fusing
+Spinning Wheel,Fibers,Spinning
+Stains / Dyes,Fibers,Staining / Dyeing
+,Fibers,Weaving / Braiding / Twisting
+3D Printer,Glass,3D Printing
+Blowtorch / Lamp,Glass,Bending
+Blowtorch / Lamp,Glass,Blowing
+Blowtorch / Lamp,Glass,Brazing / Soldering
+Molds / Forms / Casts,Glass,Casting
+Ovens / Kilns / Forges / Foundries,Glass,Casting
+Blowtorch / Lamp,Glass,Composition
+Chemical Adhesives,Glass,Composition
+Epoxy / Synthetic Resins,Glass,Composition
+Laser,Glass,Cutting
+Saw,Glass,Cutting
+Scoring Edge / Tool,Glass,Cutting
+Drill / Drill Press,Glass,Drilling
+Abrasives / Grinders,Glass,Etching
+Chemical Etchant / Solvent,Glass,Etching
+Laser,Glass,Etching
+Blowtorch / Lamp,Glass,Laminating / Fusing
+Chemical Adhesives,Glass,Laminating / Fusing
+Epoxy / Synthetic Resins,Glass,Laminating / Fusing
+Lathe,Glass,Milling
+Mill / Milling Machine,Glass,Milling
+Blowtorch / Lamp,Glass,Molding / Forging
+Paints / Inks,Glass,Painting / Inking
+Stains / Dyes,Glass,Staining / Dyeing
+Lathe,Glass,Turning
+Blowtorch / Lamp,Glass,Welding
+3D Printer,Metals,3D Printing
+Blowtorch / Lamp,Metals,Bending
+Presses / Brakes,Metals,Bending
+Blowtorch / Lamp,Metals,Brazing / Soldering
+Molds / Forms / Casts,Metals,Casting
+Ovens / Kilns / Forges / Foundries,Metals,Casting
+Chemical Adhesives,Metals,Composition
+Epoxy / Synthetic Resins,Metals,Composition
+Presses / Brakes,Metals,Creasing / Pleating
+Laser,Metals,Cutting
+Saw,Metals,Cutting
+Shears / Snips / Scissors,Metals,Cutting
+Drill / Drill Press,Metals,Drilling
+Abrasives / Grinders,Metals,Etching
+Chemical Etchant / Solvent,Metals,Etching
+Laser,Metals,Etching
+Chemical Adhesives,Metals,Laminating / Fusing
+Epoxy / Synthetic Resins,Metals,Laminating / Fusing
+Lathe,Metals,Milling
+Mill / Milling Machine,Metals,Milling
+Ovens / Kilns / Forges / Foundries,Metals,Molding / Forging
+Paints / Inks,Metals,Painting / Inking
+Stains / Dyes,Metals,Staining / Dyeing
+Lathe,Metals,Turning
+,Metals,Weaving / Braiding / Twisting
+Arc Welder,Metals,Welding
+Abrasives / Grinders,Paper / Paperboard / Cardboard,Abrasion
+Presses / Brakes,Paper / Paperboard / Cardboard,Bending
+Molds / Forms / Casts,Paper / Paperboard / Cardboard,Casting
+Chemical Adhesives,Paper / Paperboard / Cardboard,Composition
+Presses / Brakes,Paper / Paperboard / Cardboard,Creasing / Pleating
+Soldering / Heating Irons,Paper / Paperboard / Cardboard,Creasing / Pleating
+Laser,Paper / Paperboard / Cardboard,Cutting
+Saw,Paper / Paperboard / Cardboard,Cutting
+Shears / Snips / Scissors,Paper / Paperboard / Cardboard,Cutting
+Drill / Drill Press,Paper / Paperboard / Cardboard,Drilling
+Abrasives / Grinders,Paper / Paperboard / Cardboard,Etching
+Laser,Paper / Paperboard / Cardboard,Etching
+Soldering / Heating Irons,Paper / Paperboard / Cardboard,Etching
+Chemical Adhesives,Paper / Paperboard / Cardboard,Laminating / Fusing
+Epoxy / Synthetic Resins,Paper / Paperboard / Cardboard,Laminating / Fusing
+Lathe,Paper / Paperboard / Cardboard,Milling
+Mill / Milling Machine,Paper / Paperboard / Cardboard,Milling
+,Paper / Paperboard / Cardboard,Molding / Forging
+Paints / Inks,Paper / Paperboard / Cardboard,Painting / Inking
+Needle ,Paper / Paperboard / Cardboard,Sewing
+Sewing Machine,Paper / Paperboard / Cardboard,Sewing
+Stains / Dyes,Paper / Paperboard / Cardboard,Staining / Dyeing
+,Paper / Paperboard / Cardboard,Weaving / Braiding / Twisting
+3D Printer,Plastics,3D Printing
+Blowtorch / Lamp,Plastics,Bending
+Presses / Brakes,Plastics,Bending
+Soldering / Heating Irons,Plastics,Bending
+Knives / Chisels / Gouges,Plastics,Carving
+Molds / Forms / Casts,Plastics,Casting
+Ovens / Kilns / Forges / Foundries,Plastics,Casting
+Chemical Adhesives,Plastics,Composition
+Epoxy / Synthetic Resins,Plastics,Composition
+Presses / Brakes,Plastics,Creasing / Pleating
+Soldering / Heating Irons,Plastics,Creasing / Pleating
+Blowtorch / Lamp,Plastics,Cutting
+Laser,Plastics,Cutting
+Saw,Plastics,Cutting
+Scoring Edge / Tool,Plastics,Cutting
+Shears / Snips / Scissors,Plastics,Cutting
+Soldering / Heating Irons,Plastics,Cutting
+Drill / Drill Press,Plastics,Drilling
+Abrasives / Grinders,Plastics,Etching
+Chemical Etchant / Solvent,Plastics,Etching
+Laser,Plastics,Etching
+Soldering / Heating Irons,Plastics,Etching
+Blowtorch / Lamp,Plastics,Laminating / Fusing
+Chemical Adhesives,Plastics,Laminating / Fusing
+Epoxy / Synthetic Resins,Plastics,Laminating / Fusing
+Soldering / Heating Irons,Plastics,Laminating / Fusing
+Lathe,Plastics,Milling
+Mill / Milling Machine,Plastics,Milling
+Blowtorch / Lamp,Plastics,Molding / Forging
+Paints / Inks,Plastics,Painting / Inking
+Stains / Dyes,Plastics,Staining / Dyeing
+Lathe,Plastics,Turning
+,Plastics,Weaving / Braiding / Twisting
+Blowtorch / Lamp,Plastics,Welding
+Soldering / Heating Irons,Plastics,Welding
+Abrasives / Grinders,Rope / String / Cord,Abrasion
+Chemical Adhesives,Rope / String / Cord,Composition
+Epoxy / Synthetic Resins,Rope / String / Cord,Composition
+Laser,Rope / String / Cord,Cutting
+Shears / Snips / Scissors,Rope / String / Cord,Cutting
+Chemical Adhesives,Rope / String / Cord,Laminating / Fusing
+Epoxy / Synthetic Resins,Rope / String / Cord,Laminating / Fusing
+Paints / Inks,Rope / String / Cord,Painting / Inking
+Needle,Rope / String / Cord,Sewing
+Sewing Machine,Rope / String / Cord,Sewing
+Stains / Dyes,Rope / String / Cord,Staining / Dyeing
+,Rope / String / Cord,Weaving
+Abrasives / Grinders,Textiles / Fabrics,Abrasion
+Chemical Adhesives,Textiles / Fabrics,Composition
+Epoxy / Synthetic Resins,Textiles / Fabrics,Composition
+Presses / Brakes,Textiles / Fabrics,Creasing / Pleating
+Soldering / Heating Irons,Textiles / Fabrics,Creasing / Pleating
+Laser,Textiles / Fabrics,Cutting
+Shears / Snips / Scissors,Textiles / Fabrics,Cutting
+Chemical Adhesives,Textiles / Fabrics,Laminating / Fusing
+Epoxy / Synthetic Resins,Textiles / Fabrics,Laminating / Fusing
+Soldering / Heating Irons,Textiles / Fabrics,Laminating / Fusing
+Paints / Inks,Textiles / Fabrics,Painting / Inking
+Needle ,Textiles / Fabrics,Sewing
+Sewing Machine,Textiles / Fabrics,Sewing
+Stains / Dyes,Textiles / Fabrics,Staining / Dyeing
+,Textiles / Fabrics,Weaving / Braiding / Twisting
+Blowtorch / Lamp,Textiles / Fabrics,Welding
+Soldering / Heating Irons,Textiles / Fabrics,Welding
+3D Printer,Woods,3D Printing
+Alkali Plasticizer,Woods,Bending
+Soldering / Heating Irons,Woods,Bending
+Steam Box,Woods,Bending
+Knives / Chisels / Gouges,Woods,Carving
+Chemical Adhesives,Woods,Composition
+Epoxy / Synthetic Resins,Woods,Composition
+Laser,Woods,Cutting
+Saw,Woods,Cutting
+Drill / Drill Press,Woods,Drilling
+Abrasives / Grinders,Woods,Etching
+Blowtorch / Lamp,Woods,Etching
+Laser,Woods,Etching
+Soldering / Heating Irons,Woods,Etching
+Chemical Adhesives,Woods,Laminating / Fusing
+Epoxy / Synthetic Resins,Woods,Laminating / Fusing
+Lathe,Woods,Milling
+Mill / Milling Machine,Woods,Milling
+Paints / Inks,Woods,Painting / Inking
+Stains / Dyes,Woods,Staining / Dyeing
+Lathe,Woods,Turning
