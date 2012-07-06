@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-<script language="JavaScript" src="d3.v2.min.js"></script>
+<script language="JavaScript" src="libs/jquery-1.7.2.min.js"></script>
+<script language="JavaScript" src="libs/d3.v2.min.js"></script>
 <title>Making Things - Force Directed Graphs</title>
 </head>
 
@@ -29,6 +30,12 @@
 <div id="chart">
 <script language="JavaScript">
 
+// GET parser function
+$.urlParam = function(name){
+  var result = new RegExp(name + "=([^&]*)", "i").exec(window.location.search); 
+  return result && result[1] || "";
+}
+
 // Define node and link types
 var nodeTypes = new Array("tools","materials","processes");
 var linkTypes = new Array("tool-material", "tool-process", "material-process");
@@ -38,9 +45,9 @@ var activeLinkTypes = new Array();
 // Apply GET vars to the filters form, populate activeNodeTypes
 for (var n = 0; n < nodeTypes.length; n++){
   var nodeType    = nodeTypes[n];
-  var nodeChecked = getUrlVars()[nodeType];
+  var nodeChecked = $.urlParam(nodeType);
   if (nodeChecked == "on"){
-    document.getElementById(nodeType).checked = true;
+    $("#"+nodeType).prop("checked", true);
     activeNodeTypes.push(nodeType);
   }
 }
@@ -69,9 +76,20 @@ var svg = d3.select("#chart").append("svg")
     .attr("height", height);
 
 d3.json("MakingThings_Alpha.json", function(json) {
+
+  // Combine nodes and links of various types into single objects
+  var useNodes = {};
+  for (var n = 0; n < activeNodeTypes.length; n++){
+    jQuery.extend(useNodes,json.nodes[activeNodeTypes[n]]);
+  }
+  var useLinks = {};
+  for (var n = 0; n < activeLinkTypes.length; n++){
+    jQuery.extend(useLinks,json.links[activeLinkTypes[n]]);
+  }
+  
   force
-      .nodes(json.nodes)
-      .links(json.links)
+      .nodes(useNodes)
+      .links(useLinks)
       .start();
 
   var link = svg.selectAll("line.link")
@@ -102,13 +120,6 @@ d3.json("MakingThings_Alpha.json", function(json) {
   });
 });
 
-function getUrlVars() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
 </script>
 </div>
   
