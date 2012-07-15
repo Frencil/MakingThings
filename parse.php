@@ -3,6 +3,7 @@
 /**
  * Initialize global vars
  */
+$node_iterator = 0;
 $tools     = array();
 $materials = array();
 $processes = array();
@@ -75,18 +76,20 @@ exit;
  */
 function getNodeId($nodeType, $nodeValue){
 
-  global $indexes, $nodes;
+  global $indexes, $nodes, $node_iterator;
 
   if (!$nodeValue)
     return false;
 
-  $node_idx = array_search($nodeValue,$indexes[$nodeType]);
-  if ($node_idx === false){
-    $node_idx = array_push($indexes[$nodeType],$nodeValue) - 1;
-    $nodes[$nodeType][] = array('id'   => $node_idx + 1,
+  $node_id = array_search($nodeValue,$indexes[$nodeType]);
+  if ($node_id === false){
+    $node_iterator++;
+    $indexes[$nodeType][$node_iterator] = $nodeValue;
+    $nodes[$nodeType][] = array('id'   => $node_iterator,
 		                'name' => $nodeValue);
+    return $node_iterator;
   } else {
-    return $node_idx + 1;
+    return $node_id;
   }
 
 }
