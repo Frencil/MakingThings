@@ -5,6 +5,17 @@
 <script language="JavaScript" src="libs/jquery-1.7.2.min.js"></script>
 <script language="JavaScript" src="libs/d3.v2.min.js"></script>
 <title>Making Things - Force Directed Graphs</title>
+<style>
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+</style>
 </head>
 
 <body>
@@ -78,14 +89,19 @@ var svg = d3.select("#chart").append("svg")
 d3.json("MakingThings_Alpha.json", function(json) {
 
   // Combine nodes and links of various types into single objects
-  var useNodes = {};
+  var useNodes = new Array();
   for (var n = 0; n < activeNodeTypes.length; n++){
-    jQuery.extend(useNodes,json.nodes[activeNodeTypes[n]]);
+    useNodes = useNodes.concat(json.nodes[activeNodeTypes[n]]);
   }
-  var useLinks = {};
+  var useLinks = new Array();
   for (var n = 0; n < activeLinkTypes.length; n++){
-    jQuery.extend(useLinks,json.links[activeLinkTypes[n]]);
+    useLinks = useLinks.concat(json.links[activeLinkTypes[n]]);
   }
+
+  //var useNodes = json.nodes;
+  //var useLinks = json.links;
+
+  console.log(useLinks);
   
   force
       .nodes(useNodes)
@@ -93,13 +109,13 @@ d3.json("MakingThings_Alpha.json", function(json) {
       .start();
 
   var link = svg.selectAll("line.link")
-      .data(json.links)
+      .data(useLinks)
       .enter().append("line")
       .attr("class", "link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.selectAll("circle.node")
-      .data(json.nodes)
+      .data(useNodes)
       .enter().append("circle")
       .attr("class", "node")
       .attr("r", 5)

@@ -41,20 +41,22 @@ for ($l = 1; $l < count($lines); $l++){
 
   // Create links
   if ($tool && $material)
-    createLink('tool-material', $tool, $material);
+    createLink('tool-material', $tool_id, $material_id);
 
   if ($tool && $process)
-    createLink('tool-process', $tool, $process);
+    createLink('tool-process', $tool_id, $process_id);
 
   if ($material && $process)
-    createLink('material-process', $material, $process);
+    createLink('material-process', $material_id, $process_id);
 
 }
 
 /**
  * Generate and print JSON
  */
-foreach ($links as $linkType => $linkValues){
+$raw_links = $links;
+$links = array();
+foreach ($raw_links as $linkType => $linkValues){
   for ($v = 0; $v < count($linkValues); $v++){
     $links[$linkType][] = array('source' => $linkValues[$v][0],
 				'target' => $linkValues[$v][1],
@@ -85,8 +87,9 @@ function getNodeId($nodeType, $nodeValue){
   if ($node_id === false){
     $node_iterator++;
     $indexes[$nodeType][$node_iterator] = $nodeValue;
-    $nodes[$nodeType][] = array('id'   => $node_iterator,
-		                'name' => $nodeValue);
+    $nodes[$nodeType][] = array('id'    => $node_iterator,
+		                'name'  => $nodeValue,
+				'group' => $nodeType);
     return $node_iterator;
   } else {
     return $node_id;
