@@ -49,9 +49,7 @@ $.urlParam = function(name){
 
 // Define node and link types
 var nodeTypes = new Array("tools","materials","processes");
-var linkTypes = new Array("tool-material", "tool-process", "material-process");
 var activeNodeTypes = new Array();
-var activeLinkTypes = new Array();
 
 // Apply GET vars to the filters form, populate activeNodeTypes
 for (var n = 0; n < nodeTypes.length; n++){
@@ -63,14 +61,6 @@ for (var n = 0; n < nodeTypes.length; n++){
   }
 }
 
-// Use activeNodeTypes to populate activeLinkTypes
-if ( (activeNodeTypes.indexOf("tools") != -1) && (activeNodeTypes.indexOf("materials") != -1) )
-  activeLinkTypes.push("tool-material");
-if ( (activeNodeTypes.indexOf("tools") != -1) && (activeNodeTypes.indexOf("processes") != -1) )
-  activeLinkTypes.push("tool-process");
-if ( (activeNodeTypes.indexOf("materials") != -1) && (activeNodeTypes.indexOf("processes") != -1) )
-  activeLinkTypes.push("material-process");
-
 // Set up the graph
 var width = 960,
     height = 500;
@@ -78,44 +68,29 @@ var width = 960,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(30)
+    .charge(-400)
+    .linkDistance(60)
     .size([width, height]);
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("MakingThings_Alpha.json", function(json) {
-
-  // Combine nodes and links of various types into single objects
-  var useNodes = new Array();
-  for (var n = 0; n < activeNodeTypes.length; n++){
-    useNodes = useNodes.concat(json.nodes[activeNodeTypes[n]]);
-  }
-  var useLinks = new Array();
-  for (var n = 0; n < activeLinkTypes.length; n++){
-    useLinks = useLinks.concat(json.links[activeLinkTypes[n]]);
-  }
-
-  //var useNodes = json.nodes;
-  //var useLinks = json.links;
-
-  console.log(useLinks);
+d3.json("http://localhost/MakingThings/MakingThings_Alpha.json", function(json) {
   
   force
-      .nodes(useNodes)
-      .links(useLinks)
+      .nodes(json.nodes)
+      .links(json.links)
       .start();
 
   var link = svg.selectAll("line.link")
-      .data(useLinks)
+      .data(json.links)
       .enter().append("line")
       .attr("class", "link")
       .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.selectAll("circle.node")
-      .data(useNodes)
+      .data(json.nodes)
       .enter().append("circle")
       .attr("class", "node")
       .attr("r", 5)

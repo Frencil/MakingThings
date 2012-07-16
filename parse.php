@@ -3,20 +3,13 @@
 /**
  * Initialize global vars
  */
-$node_iterator = 0;
-$tools     = array();
-$materials = array();
-$processes = array();
+$nodes = array();
+$links = array();
 
-$links = array('tool-material'    => array(),
-	       'tool-process'     => array(),
-	       'material-process' => array(),
-	       );
+$include_type = array('tools'     => 1,
+                      'materials' => 1,
+                      'processes' => 1);
 
-$nodes = $indexes = array('tools'     => array(),
-			  'materials' => array(),
-			  'processes' => array()
-			  );
 
 /**
  * Parse CSV
@@ -29,42 +22,46 @@ for ($l = 1; $l < count($lines); $l++){
 
   $terms = explode(",",$lines[$l]);
 
-  // Generate nodes
-  $tool     = ucwords(strtolower(trim($terms[0])));
-  $material = ucwords(strtolower(trim($terms[1])));
-  $process  = ucwords(strtolower(trim($terms[2])));
+  $tool_idx     = 0;
+  $material_idx = 0;
+  $process_idx  = 0;
 
-  // Get node IDs for all nodes
-  $tool_id     = getNodeId('tools', $tool);
-  $material_id = getNodeId('materials', $material);
-  $process_id  = getNodeId('processes', $process);
+  if ($include_type['tools']) {
+    $tool     = ucwords(strtolower(trim($terms[0])));
+    $tool_idx = getNodeIdx('tools', $tool);
+  }
+  if ($include_type['materials']) {
+    $material     = ucwords(strtolower(trim($terms[1])));
+    $material_idx = getNodeIdx('materials', $material);
+  }
+  if ($include_type['processes']) {
+    $process     = ucwords(strtolower(trim($terms[2])));
+    $process_idx = getNodeIdx('processes', $process);
+  }
 
   // Create links
-  if ($tool && $material)
-    createLink('tool-material', $tool_id, $material_id);
+  if ($tool_idx && $material_idx)
+    createLink($tool_idx, $material_idx);
 
-  if ($tool && $process)
-    createLink('tool-process', $tool_id, $process_id);
+  if ($tool_idx && $process_idx)
+    createLink($tool_idx, $process_idx);
 
-  if ($material && $process)
-    createLink('material-process', $material_id, $process_id);
+  if ($material_idx && $process_idx)
+    createLink($material_idx, $process_idx);
 
 }
+
 
 /**
  * Generate and print JSON
  */
-$raw_links = $links;
-$links = array();
-foreach ($raw_links as $linkType => $linkValues){
-  for ($v = 0; $v < count($linkValues); $v++){
-    $links[$linkType][] = array('source' => $linkValues[$v][0],
-				'target' => $linkValues[$v][1],
-				'value'  => 1);
-  }
+for ($l = 0; $l < count($links); $l++){
+  $links[$l]['value'] = 1;
 }
+
 $json = array('nodes' => $nodes,
 	      'links' => $links);
+
 echo json_encode($json);
 
 exit;
@@ -72,37 +69,36 @@ exit;
 
 
 
-
 /*******************************************************************
  * Helper Functions
  */
-function getNodeId($nodeType, $nodeValue){
+function getNodeIdx($nodeType, $nodeValue){
 
-  global $indexes, $nodes, $node_iterator;
+  global $nodes;
 
   if (!$nodeValue)
     return false;
 
-  $node_id = array_search($nodeValue,$indexes[$nodeType]);
-  if ($node_id === false){
-    $node_iterator++;
-    $indexes[$nodeType][$node_iterator] = $nodeValue;
-    $nodes[$nodeType][] = array('id'    => $node_iterator,
-		                'name'  => $nodeValue,
-				'group' => $nodeType);
-    return $node_iterator;
-  } else {
-    return $node_id;
+  $nodeObject = array('name'  => $nodeValue,
+                      'group' => $nodeType);
+
+  $node_idx = array_search($nodeObject,$nodes);
+  if ($node_idx === false){
+    $node_idx = count($nodes);
+    $nodes[]  = $nodeObject;
   }
+
+  return $node_idx;
 
 }
 
-function createLink($linkType, $linkSource, $linkTarget){
+function createLink($linkSource, $linkTarget){
   global $links;
-  $link = array($linkSource,$linkTarget);
-  $link_idx = array_search($link, $links[$linkType]);
+  $link = array('source' => $linkSource,
+                'target' => $linkTarget);
+  $link_idx = array_search($link, $links);
   if ($link_idx === false)
-    $links[$linkType][] = $link;
+    $links[] = $link;
 }
 
 ?>
