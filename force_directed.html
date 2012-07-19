@@ -11,32 +11,26 @@ circle.node {
   stroke-width: 1.5px;
 }
 
+circle.node:hover {
+  stroke: #888;
+  stroke-width: 3px;
+}
+
 line.link {
   stroke: #999;
   stroke-opacity: .6;
+}
+
+line.link:hover {
+  stroke-opacity: 1;
+  stroke-width: 3;
 }
 </style>
 </head>
 
 <body>
-<table width="100%">
-  <tr>
-    <td>
-      <h1>Making Things</h1>
-    </td>
-    <td align="right">
-      <form id="filters" method="GET">
-        <input type="checkbox" name="tools" id="tools"> Tools
-        &nbsp;&nbsp;
-        <input type="checkbox" name="materials" id="materials"> Materials
-        &nbsp;&nbsp;
-        <input type="checkbox" name="processes" id="processes"> Processes
-        &nbsp;&nbsp;
-        <input type="submit" value="Submit">
-      </form>
-    </td>
-  </tr>
-</table>
+
+<h1>Making Things</h1>
 
 <div id="chart">
 <script language="JavaScript">
@@ -48,7 +42,7 @@ $.urlParam = function(name){
 }
 
 // Define node and link types
-var nodeTypes = new Array("tools","materials","processes");
+var nodeTypes = new Array("tools","materials");
 var activeNodeTypes = new Array();
 
 // Apply GET vars to the filters form, populate activeNodeTypes
@@ -68,13 +62,21 @@ var width = 960,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-400)
-    .linkDistance(60)
+    .charge(-1000)
+    .linkDistance(100)
     .size([width, height]);
 
 var svg = d3.select("#chart").append("svg")
     .attr("width", width)
     .attr("height", height);
+
+function node_color(group){
+  if (group == 'tools'){
+    return '#3148F5';
+  } else {
+    return '#30D91A';
+  }
+}
 
 d3.json("http://localhost/MakingThings/MakingThings_Alpha.json", function(json) {
   
@@ -87,14 +89,18 @@ d3.json("http://localhost/MakingThings/MakingThings_Alpha.json", function(json) 
       .data(json.links)
       .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .style("stroke-width", 2);
+      //.style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  link.append("title")
+      .text(function(d) { return d.name; });
 
   var node = svg.selectAll("circle.node")
       .data(json.nodes)
       .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 5)
-      .style("fill", function(d) { return color(d.group); })
+      .attr("r", function(d) { return Math.floor(d.size); })
+      .style("fill", function(d) { return node_color(d.group); })
       .call(force.drag);
 
   node.append("title")
